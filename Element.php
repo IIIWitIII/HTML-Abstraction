@@ -2,6 +2,12 @@
 
 namespace Wit\Html;
 
+/**
+ * This is a simple PHP to HTML Abstraction
+ * required PHP version: 5.6
+ *
+ * @package Wit\Html
+ */
 class Element {
 
 	/**
@@ -30,26 +36,10 @@ class Element {
 	protected $bindings = [];
 
 	/**
-	 * @var array
-	 */
-	protected static $standalones = [ "img", "input", "link", "br", "hr" /*, ...*/ ];
-
-	/**
-	 * creates a new HTML object
-	 * @param string $name
-	 * @param mixed $content string or Closure
-	 * @access public
-	 * @return Element
-	 */
-	public static function create( $name, $content = "" ) {
-		return new Element( $name, $content, in_array( $name, self::$standalones ));
-	}
-
-	/**
 	 * create the element
 	 *
 	 * @param string $name
-	 * @param mixed $content string, closure or Element
+	 * @param mixed $content string, closure or Element. Can also be an array of string, closure or Element.
 	 * @param boolean $standalone
 	 * @access public
 	 */
@@ -107,7 +97,7 @@ class Element {
 					$return .= call_user_func_array( $c, $this->bindings );
 				} else $return .= $c;
 			}
-			
+
 			$return .= "</{$this->name}>";
 		}
 
