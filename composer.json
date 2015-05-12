@@ -14,7 +14,7 @@
     ],
     "autoload": {
       "psr-4": {
-        "Wit\\Html": "src/Wit/Html"
+        "Wit\\Html\\": "src/Wit/Html"
       }
     }
 }
