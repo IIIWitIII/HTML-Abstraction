@@ -1,0 +1,13 @@
+{
+    "name": "wit/html",
+    "description": "A simple HTML abstraction",
+    "require": {
+        "php": ">=5.6"
+    },
+    "authors": [
+        {
+            "name": "Lennart Franke",
+            "email": "lennart.franke.de@gmail.com"
+        }
+    ]
+}
